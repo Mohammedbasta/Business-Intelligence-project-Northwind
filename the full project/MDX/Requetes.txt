@@ -1,0 +1,63 @@
+
+
+#1
+
+quelle est la durée moyenne d'expédition par pays ?
+
+SELECT {[Measures].[Nbr Jour Livraison]} ON COLUMNS,
+Order({[Region].[Pays].Members}, [Measures].[Nbr Jour Livraison], DESC) ON ROWS
+FROM [Commandes]
+
+#2
+
+quels sont les produits les plus commandés par un client ?
+
+ SELECT {[Measures].[Quantite]} ON COLUMNS,
+ TopCount({[Produit].[Nom].Members}, 10.0, [Measures].[Quantite]) ON ROWS
+ FROM [Commandes]
+ WHERE [Client].[Familia Arquibaldo].[Marketing Assistant].[Aria Cruz]
+
+ #3
+
+quel est le client actifs d'une année (1997) ?
+
+ SELECT {[Measures].[Total]} ON COLUMNS,
+ TopCount({[Client].[Nom].Members}, 1, [Measures].[Total])ON ROWS
+FROM [Commandes]
+WHERE [Time].[1997]
+
+
+#4
+
+quels sont les produits les plus commandés dans une région à une saison ( USA , été de 1997) ?
+
+SELECT  {[Measures].[Quantite]} ON COLUMNS,
+TopCount({[Produit].[Nom].Members}, 5.0, [Measures].[Quantite]) ON ROWS
+FROM [Commandes]
+WHERE TopCount(CrossJoin({[Region].[USA]}, {[Time].[1997].[4]}), 5.0, [Measures].[Quantite])
+
+#5
+
+quelle est la duree moyenne d'expedition par chaque expéditeur ?
+
+SELECT
+ {[Measures].[Nbr Jour Livraison]} ON COLUMNS,
+ Order({[Expediteur].[Entreprise].Members}, [Measures].[Nbr Jour Livraison], ASC) ON ROWS
+FROM [Commandes]
+
+#6
+
+quels sont les montants des commandes traités par employé et/ou sous sa responsabilité ?
+
+SELECT {[Measures].[Total]} ON COLUMNS,
+Hierarchize(Union({[Employee].[Andrew Fuller]}, [Employee].[Andrew Fuller].Children)) ON ROWS
+FROM [Commandes]
+
+#7
+
+quels sont les clients ayant commander le plus (clients fidèles) ?
+
+WITH MEMBER [Measures].[RAP] AS '(([Measures].[Total]) / [Measures].[Quantite])' MEMBER [Measures].[CLASS] AS 'IIf(([Measures].[RAP] > 20.0), "GOOD_CLIENT", "BAD_CLIENT")'
+SELECT {[Measures].[Quantite], [Measures].[Total], [Measures].[CLASS]} ON COLUMNS,
+{[Client].[Nom].Members} ON ROWS
+FROM [Commandes] WHERE [Time].[1997]

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="All_years_QUR" type="sql.jndi">
+         <Jndi>Schema_CMD_1</Jndi>
+      </Connection>
+      <Connection id="Nombre_de_jour" type="sql.jndi">
+         <Jndi>Schema_CMD_1</Jndi>
+      </Connection>
+      <Connection id="cmd_qnt" type="sql.jndi">
+         <Jndi>Schema_CMD_1</Jndi>
+      </Connection>
+      <Connection id="cmd_table_produit" type="sql.jndi">
+         <Jndi>Schema_CMD_1</Jndi>
+      </Connection>
+      <Connection id="top_expediteur" type="sql.jndi">
+         <Jndi>Schema_CMD_1</Jndi>
+      </Connection>
+      <Connection id="top_fornisseur" type="sql.jndi">
+         <Jndi>Schema_CMD_1</Jndi>
+      </Connection>
+      <Connection id="top_employee" type="sql.jndi">
+         <Jndi>Schema_CMD_1</Jndi>
+      </Connection>
+      <Connection id="top_client" type="sql.jndi">
+         <Jndi>Schema_CMD_1</Jndi>
+      </Connection>
+      <Connection id="cmd_count_pays" type="sql.jndi">
+         <Jndi>Schema_CMD_1</Jndi>
+      </Connection>
+      <Connection id="cmd_count" type="sql.jndi">
+         <Jndi>Schema_CMD_1</Jndi>
+      </Connection>
+      <Connection id="cmd_tolal" type="sql.jndi">
+         <Jndi>Schema_CMD_1</Jndi>
+      </Connection>
+      <Connection id="cmd_year_month" type="sql.jndi">
+         <Jndi>Schema_CMD_1</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="All_years_QUR" id="All_years_QUR" type="sql">
+      <Name>All_years_QUR</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select distinct t.year 
+from dim_time t]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="Nombre_de_jour" id="Nombre_de_jour" type="sql">
+      <Name>Nombre_de_jour</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="param_end_date" name="param_end_date" type="String"/>
+         <Parameter default="param_start_date" name="param_start_date" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  DATEDIFF(${param_end_date},${param_start_date}) as "nomber de jour"]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="cmd_qnt" id="cmd_qnt" type="sql">
+      <Name>cmd_qnt</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="param_end_date" name="param_end_date" type="String"/>
+         <Parameter default="param_start_date" name="param_start_date" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  sum(f.quantite) as total 
+from fact_commande f,dim_time t
+where f.id_time = t.id_time 
+and t.date between ${param_start_date} and ${param_end_date}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="cmd_table_produit" id="cmd_table_produit"
+               type="sql">
+      <Name>cmd_table_produit</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="param_end_date" name="param_end_date" type="String"/>
+         <Parameter default="param_start_date" name="param_start_date" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select p.nom_produit as Produit ,sum(f.quantite) as Quantite , sum(f.montant) as Montant , count(f.montant) as "Nombre de Commande"
+from fact_commande f,dim_time t,dim_produit p
+where f.id_time = t.id_time 
+and f.id_produit = p.id_produit
+and t.date between ${param_start_date} and ${param_end_date}
+group by p.nom_produit]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="top_expediteur" id="top_expediteur" type="sql">
+      <Name>top_expediteur</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="param_end_date" name="param_end_date" type="String"/>
+         <Parameter default="param_start_date" name="param_start_date" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select e.nom_entreprise as Nom ,sum(f.quantite) as Quantite , avg(f.nb_jour) as "moyenne expedition"
+from fact_commande f,dim_time t,dim_expediteur e
+where f.id_time = t.id_time 
+and f.id_expediteur = e.id_expediteur
+and t.date between ${param_start_date} and ${param_end_date}
+group by e.nom_entreprise
+limit 10]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="top_fornisseur" id="top_fornisseur" type="sql">
+      <Name>top_fornisseur</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="param_end_date" name="param_end_date" type="String"/>
+         <Parameter default="param_start_date" name="param_start_date" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select e.nom_fournisseur as Nom ,sum(f.quantite) as Quantite 
+from fact_commande f,dim_time t,dim_fournisseur e
+where f.id_time = t.id_time 
+and f.id_fournisseur = e.id_fournisseur
+and t.date between ${param_start_date} and ${param_end_date}
+group by e.nom_fournisseur
+limit 5]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="top_employee" id="top_employee" type="sql">
+      <Name>top_employee</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="param_end_date" name="param_end_date" type="String"/>
+         <Parameter default="param_start_date" name="param_start_date" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select e.nom_employe as Nom , count(f.montant) as "Nombre de Commande"
+from fact_commande f,dim_time t,dim_employe e
+where f.id_time = t.id_time 
+and f.id_employe = e.id_employe
+and t.date between ${param_start_date} and ${param_end_date}
+group by e.nom_employe
+limit 5]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="top_client" id="top_client" type="sql">
+      <Name>top_client</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="param_end_date" name="param_end_date" type="String"/>
+         <Parameter default="param_start_date" name="param_start_date" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select c.nom_client as Nom ,sum(f.montant) as Montant 
+from fact_commande f,dim_time t,dim_client c
+where f.id_time = t.id_time 
+and f.id_client = c.id_client
+and t.date between ${param_start_date} and ${param_end_date}
+group by c.nom_client
+limit 5]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="cmd_count_pays" id="cmd_count_pays" type="sql">
+      <Name>cmd_count_pays</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="param_end_date" name="param_end_date" type="String"/>
+         <Parameter default="param_start_date" name="param_start_date" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  r.pays,count(*) as total 
+from fact_commande f,dim_time t,dim_region r
+where f.id_time = t.id_time 
+and f.id_region = r.id_region 
+and t.date between ${param_start_date} and ${param_end_date}
+group by r.pays 
+order by total desc 
+limit 6]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="cmd_count" id="cmd_count" type="sql">
+      <Name>cmd_count</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="param_end_date" name="param_end_date" type="String"/>
+         <Parameter default="param_start_date" name="param_start_date" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  count(*) as total 
+from fact_commande f,dim_time t
+where f.id_time = t.id_time 
+and t.date between ${param_start_date} and ${param_end_date}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="cmd_tolal" id="cmd_tolal" type="sql">
+      <Name>cmd_tolal</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="param_end_date" name="param_end_date" type="String"/>
+         <Parameter default="param_start_date" name="param_start_date" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select  sum(f.montant) as total 
+from fact_commande f,dim_time t
+where f.id_time = t.id_time 
+and t.date between ${param_start_date} and ${param_end_date}]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="cmd_year_month" id="cmd_year_month" type="sql">
+      <Name>cmd_year_month</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="param_end_date" name="param_end_date" type="String"/>
+         <Parameter default="param_start_date" name="param_start_date" type="String"/>
+      </Parameters>
+      <Query><![CDATA[select CONCAT_WS("-",t.year,t.mois_label)as mois,sum(f.montant) as total 
+from fact_commande f,dim_time t
+where f.id_time = t.id_time 
+and t.date between ${param_start_date} and ${param_end_date}
+group by t.year,t.mois_label
+order by t.year,t.mois]]></Query>
+   </DataAccess>
+</CDADescriptor>

@@ -1,0 +1,94 @@
+<Schema name="Schema_CMD_1">
+  <Cube name="Commandes" visible="true" cache="true" enabled="true">
+    <Table name="fact_commande">
+    </Table>
+    <Dimension type="TimeDimension" visible="true" foreignKey="id_time" highCardinality="false" name="Time">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id_time">
+        <Table name="dim_time">
+        </Table>
+        <Level name="Annees" visible="true" column="year" type="String" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
+        </Level>
+        <Level name="Saison" visible="true" column="saison" type="String" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never" captionColumn="saison_label">
+        </Level>
+        <Level name="Mois" visible="true" column="mois" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" captionColumn="mois_label">
+        </Level>
+        <Level name="Semaine" visible="true" column="semaine" type="String" uniqueMembers="false" levelType="TimeWeeks" hideMemberIf="Never">
+        </Level>
+        <Level name="Jour" visible="true" column="jour" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never" captionColumn="jour_label">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_region" highCardinality="false" name="Region">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id_region">
+        <Table name="dim_region">
+        </Table>
+        <Level name="Pays" visible="true" column="pays" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Region" visible="true" column="region" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Ville" visible="true" column="ville" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_employe" highCardinality="false" name="Employee">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id_employe">
+        <Table name="dim_employe">
+        </Table>
+        <Level name="Nom" visible="true" column="id_employe" nameColumn="nom_employe" parentColumn="superviseur" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_client" highCardinality="false" name="Client">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id_client">
+        <Table name="dim_client">
+        </Table>
+        <Level name="Entreprise" visible="true" column="nom_entreprise" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Fonction" visible="true" column="fonction_client" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Nom" visible="true" column="nom_client" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_expediteur" highCardinality="false" name="Expediteur">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id_expediteur">
+        <Table name="dim_expediteur">
+        </Table>
+        <Level name="Entreprise" visible="true" column="nom_entreprise" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_fournisseur" highCardinality="false" name="Fournisseur">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id_fournisseur">
+        <Table name="dim_fournisseur">
+        </Table>
+        <Level name="Entreprise" visible="true" column="nom_entreprise_fournisseur" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Fonction" visible="true" column="fonction_fournisseur" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Nom" visible="true" column="nom_fournisseur" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_produit" highCardinality="false" name="Produit">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id_produit">
+        <Table name="dim_produit">
+        </Table>
+        <Level name="Categorie" visible="true" column="nom_categorie" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Nom" visible="true" column="nom_produit" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Prix" visible="true" column="prix_produit" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="Prix" column="prix" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Quantite" column="quantite" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Total" column="montant" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Nbr Jour Livraison" column="nb_jour" aggregator="avg" visible="true">
+    </Measure>
+  </Cube>
+</Schema>

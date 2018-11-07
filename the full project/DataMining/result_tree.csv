@@ -1,0 +1,68 @@
+client;pays;quantite;total;class;class_predicted
+Nancy Davolio   ;Spain      ;44;740.4;BAD_CLIENT ;GOOD_CLIENT
+Andrew Fuller   ;Germany    ;32;1200.8;GOOD_CLIENT;GOOD_CLIENT
+Robert King     ;Mexico     ;6;88.8;BAD_CLIENT ;GOOD_CLIENT
+Nancy Davolio   ;Brazil     ;20;1296;GOOD_CLIENT;GOOD_CLIENT
+Nancy Davolio   ;UK         ;35;950;GOOD_CLIENT;GOOD_CLIENT
+Nancy Davolio   ;France     ;79;1256.6;BAD_CLIENT ;GOOD_CLIENT
+Janet Leverling ;Mexico     ;24;403.2;BAD_CLIENT ;GOOD_CLIENT
+Margaret Peacock;Brazil     ;95;1094;BAD_CLIENT ;GOOD_CLIENT
+Nancy Davolio   ;USA        ;174;8400.2;GOOD_CLIENT;GOOD_CLIENT
+Andrew Fuller   ;Brazil     ;130;1960;BAD_CLIENT ;GOOD_CLIENT
+Nancy Davolio   ;Venezuela  ;276;5877.4;GOOD_CLIENT;GOOD_CLIENT
+Margaret Peacock;Venezuela  ;152;3453.1;GOOD_CLIENT;GOOD_CLIENT
+Andrew Fuller   ;Sweden     ;169;4324.4;GOOD_CLIENT;GOOD_CLIENT
+Laura Callahan  ;Spain      ;10;136;BAD_CLIENT ;GOOD_CLIENT
+Margaret Peacock;Canada     ;81;1832.8;GOOD_CLIENT;GOOD_CLIENT
+Andrew Fuller   ;USA        ;33;712;GOOD_CLIENT;GOOD_CLIENT
+Margaret Peacock;Mexico     ;11;100.8;BAD_CLIENT ;GOOD_CLIENT
+Andrew Fuller   ;France     ;268;9986.2;GOOD_CLIENT;GOOD_CLIENT
+Andrew Fuller   ;Austria    ;112;12181.6;GOOD_CLIENT;GOOD_CLIENT
+Nancy Davolio   ;Italy      ;68;915.2;BAD_CLIENT ;GOOD_CLIENT
+Robert King     ;Mexico     ;36;680.8;BAD_CLIENT ;GOOD_CLIENT
+Nancy Davolio   ;UK         ;321;5944.4;BAD_CLIENT ;GOOD_CLIENT
+Janet Leverling ;UK         ;80;901.2;BAD_CLIENT ;GOOD_CLIENT
+Margaret Peacock;Germany    ;102;1746.2;BAD_CLIENT ;GOOD_CLIENT
+Nancy Davolio   ;Germany    ;693;12718.4;BAD_CLIENT ;GOOD_CLIENT
+Steven Buchanan ;Portugal   ;46;1160;GOOD_CLIENT;GOOD_CLIENT
+Margaret Peacock;Brazil     ;110;1273.5;BAD_CLIENT ;GOOD_CLIENT
+Nancy Davolio   ;France     ;13;268.8;GOOD_CLIENT;GOOD_CLIENT
+Nancy Davolio   ;Canada     ;216;6116.8;GOOD_CLIENT;GOOD_CLIENT
+Nancy Davolio   ;Norway     ;48;1058.4;GOOD_CLIENT;GOOD_CLIENT
+Robert King     ;Spain      ;85;1242;BAD_CLIENT ;GOOD_CLIENT
+Nancy Davolio   ;USA        ;567;12194.5;GOOD_CLIENT;GOOD_CLIENT
+Robert King     ;Denmark    ;17;412;GOOD_CLIENT;GOOD_CLIENT
+Michael Suyama  ;Germany    ;49;1863.4;GOOD_CLIENT;GOOD_CLIENT
+Margaret Peacock;USA        ;185;3532;BAD_CLIENT ;GOOD_CLIENT
+Nancy Davolio   ;France     ;181;4202.5;GOOD_CLIENT;GOOD_CLIENT
+Steven Buchanan ;Brazil     ;164;12281.2;GOOD_CLIENT;GOOD_CLIENT
+Janet Leverling ;Portugal   ;89;1322;BAD_CLIENT ;GOOD_CLIENT
+Laura Callahan  ;USA        ;15;336;GOOD_CLIENT;GOOD_CLIENT
+Laura Callahan  ;Venezuela  ;14;1101.2;GOOD_CLIENT;GOOD_CLIENT
+Andrew Fuller   ;Sweden     ;206;3090.2;BAD_CLIENT ;GOOD_CLIENT
+Janet Leverling ;Brazil     ;162;3257.8;GOOD_CLIENT;GOOD_CLIENT
+Margaret Peacock;Spain      ;90;982;BAD_CLIENT ;GOOD_CLIENT
+Janet Leverling ;France     ;59;815.6;BAD_CLIENT ;GOOD_CLIENT
+Margaret Peacock;Italy      ;13;89;BAD_CLIENT ;GOOD_CLIENT
+Anne Dodsworth  ;Switzerland;110;2490.5;GOOD_CLIENT;GOOD_CLIENT
+Nancy Davolio   ;Mexico     ;152;3414.3;GOOD_CLIENT;GOOD_CLIENT
+Robert King     ;Denmark    ;215;2599.8;BAD_CLIENT ;GOOD_CLIENT
+Margaret Peacock;Belgium    ;185;6438.8;GOOD_CLIENT;GOOD_CLIENT
+Janet Leverling ;Ireland    ;490;10562;GOOD_CLIENT;GOOD_CLIENT
+Andrew Fuller   ;France     ;58;1100.2;BAD_CLIENT ;GOOD_CLIENT
+Janet Leverling ;Brazil     ;27;517.8;BAD_CLIENT ;GOOD_CLIENT
+Nancy Davolio   ;USA        ;405;10861.6;GOOD_CLIENT;GOOD_CLIENT
+Laura Callahan  ;Brazil     ;60;2169;GOOD_CLIENT;GOOD_CLIENT
+Nancy Davolio   ;Germany    ;553;10702.6;BAD_CLIENT ;GOOD_CLIENT
+Nancy Davolio   ;Germany    ;84;1661.4;BAD_CLIENT ;GOOD_CLIENT
+Nancy Davolio   ;Finland    ;157;3210.8;GOOD_CLIENT;GOOD_CLIENT
+Margaret Peacock;Germany    ;145;3506;GOOD_CLIENT;GOOD_CLIENT
+Margaret Peacock;USA        ;115;5091.5;GOOD_CLIENT;GOOD_CLIENT
+Andrew Fuller   ;Germany    ;190;3872.2;GOOD_CLIENT;GOOD_CLIENT
+Nancy Davolio   ;Austria    ;837;17170.4;GOOD_CLIENT;GOOD_CLIENT
+Janet Leverling ;Germany    ;62;533.6;BAD_CLIENT ;GOOD_CLIENT
+Michael Suyama  ;UK         ;105;1379;BAD_CLIENT ;GOOD_CLIENT
+Robert King     ;UK         ;39;479.4;BAD_CLIENT ;GOOD_CLIENT
+Steven Buchanan ;Switzerland;122;1799.2;BAD_CLIENT ;GOOD_CLIENT
+Nancy Davolio   ;USA        ;45;780;BAD_CLIENT ;GOOD_CLIENT
+Nancy Davolio   ;Poland     ;45;459;BAD_CLIENT ;GOOD_CLIENT

@@ -1,0 +1,95 @@
+@relation data
+
+@attribute client {'Janet Leverling','Margaret Peacock','Nancy Davolio','Andrew Fuller','Robert King','Laura Callahan'}
+@attribute pays {Germany,Mexico,Brazil,UK,France,USA,Venezuela,Belgium,Sweden,Spain,Canada,Austria,Italy,Portugal,Norway,Denmark,Finland,Switzerland,Ireland,Argentina,Poland}
+@attribute quantite numeric
+@attribute total numeric
+@attribute class {GOOD_CLIENT,BAD_CLIENT}
+
+@data
+'Janet Leverling',Germany,110,3596.4,GOOD_CLIENT
+'Janet Leverling',Mexico,28,799.75,GOOD_CLIENT
+'Margaret Peacock',Brazil,70,1613,GOOD_CLIENT
+'Nancy Davolio',Brazil,281,8205.23,GOOD_CLIENT
+'Nancy Davolio',UK,155,4514.35,GOOD_CLIENT
+'Andrew Fuller',France,277,7465.8,GOOD_CLIENT
+'Nancy Davolio',Mexico,295,6452.15,GOOD_CLIENT
+'Andrew Fuller',Brazil,262,3344.9,BAD_CLIENT
+'Janet Leverling',USA,117,2972.5,GOOD_CLIENT
+'Nancy Davolio',Brazil,205,3660.03,BAD_CLIENT
+'Nancy Davolio',France,32,920.1,GOOD_CLIENT
+'Nancy Davolio',Venezuela,323,5953.6,BAD_CLIENT
+'Nancy Davolio',Venezuela,650,14026.18,GOOD_CLIENT
+'Margaret Peacock',Belgium,161,5684,GOOD_CLIENT
+'Nancy Davolio',Sweden,481,14533.2,GOOD_CLIENT
+'Andrew Fuller',France,3,52.35,BAD_CLIENT
+'Janet Leverling',Spain,17,493.2,GOOD_CLIENT
+'Andrew Fuller',UK,54,787.6,BAD_CLIENT
+'Janet Leverling',Canada,454,8547.5,BAD_CLIENT
+'Nancy Davolio',Venezuela,477,7803.95,BAD_CLIENT
+'Nancy Davolio',USA,55,1837.2,GOOD_CLIENT
+'Janet Leverling',France,348,8371.8,GOOD_CLIENT
+'Andrew Fuller',Austria,397,9684.6,GOOD_CLIENT
+'Andrew Fuller',Italy,270,4995.65,BAD_CLIENT
+'Andrew Fuller',Mexico,118,2065.4,BAD_CLIENT
+'Janet Leverling',Germany,68,1079.8,BAD_CLIENT
+'Nancy Davolio',UK,377,9597.65,GOOD_CLIENT
+'Nancy Davolio',UK,122,2560.5,GOOD_CLIENT
+'Margaret Peacock',USA,80,1333.3,BAD_CLIENT
+'Nancy Davolio',Germany,419,8398.6,GOOD_CLIENT
+'Nancy Davolio',Germany,2172,64238,GOOD_CLIENT
+'Nancy Davolio',USA,220,9148.55,GOOD_CLIENT
+'Janet Leverling',Portugal,84,1523.2,BAD_CLIENT
+'Nancy Davolio',USA,108,2039.42,BAD_CLIENT
+'Andrew Fuller',Brazil,304,4338.9,BAD_CLIENT
+'Andrew Fuller',France,28,487,BAD_CLIENT
+'Nancy Davolio',Canada,750,26087.1,GOOD_CLIENT
+'Nancy Davolio',USA,20,357,BAD_CLIENT
+'Robert King',Norway,21,700,GOOD_CLIENT
+'Margaret Peacock',Spain,63,3524.05,GOOD_CLIENT
+'Nancy Davolio',USA,2574,60672.64,GOOD_CLIENT
+'Andrew Fuller',Denmark,347,17482.15,GOOD_CLIENT
+'Janet Leverling',Germany,152,2180.2,BAD_CLIENT
+'Nancy Davolio',USA,518,10262.55,BAD_CLIENT
+'Nancy Davolio',France,486,12462.55,GOOD_CLIENT
+'Andrew Fuller',Brazil,527,10937.25,GOOD_CLIENT
+'Nancy Davolio',Portugal,258,5761.55,GOOD_CLIENT
+'Margaret Peacock',USA,35,1621.24,GOOD_CLIENT
+'Andrew Fuller',USA,29,2955.4,GOOD_CLIENT
+'Nancy Davolio',Venezuela,20,387.5,BAD_CLIENT
+'Margaret Peacock',Germany,79,2294,GOOD_CLIENT
+'Andrew Fuller',Sweden,468,13491.5,GOOD_CLIENT
+'Nancy Davolio',Brazil,199,6605.3,GOOD_CLIENT
+'Nancy Davolio',France,354,11666.9,GOOD_CLIENT
+'Margaret Peacock',Spain,60,4035.8,GOOD_CLIENT
+'Nancy Davolio',France,239,6099.5,GOOD_CLIENT
+'Andrew Fuller',Finland,54,1174.35,GOOD_CLIENT
+'Nancy Davolio',Italy,132,3203.6,GOOD_CLIENT
+'Nancy Davolio',Switzerland,409,12044.8,GOOD_CLIENT
+'Andrew Fuller',Mexico,110,5523.35,GOOD_CLIENT
+'Nancy Davolio',Denmark,419,9710.5,GOOD_CLIENT
+'Nancy Davolio',Italy,22,249.7,BAD_CLIENT
+'Margaret Peacock',Belgium,355,6403.1,BAD_CLIENT
+'Nancy Davolio',Ireland,799,23959.05,GOOD_CLIENT
+'Laura Callahan',Argentina,20,238,BAD_CLIENT
+'Andrew Fuller',France,40,379.8,BAD_CLIENT
+'Janet Leverling',Brazil,164,4717.9,GOOD_CLIENT
+'Nancy Davolio',USA,540,19658.7,GOOD_CLIENT
+'Margaret Peacock',Brazil,45,1128,GOOD_CLIENT
+'Nancy Davolio',Germany,597,12433.11,GOOD_CLIENT
+'Nancy Davolio',Germany,419,9879.4,GOOD_CLIENT
+'Andrew Fuller',Finland,550,13106.3,GOOD_CLIENT
+'Janet Leverling',Germany,471,14433.17,GOOD_CLIENT
+'Nancy Davolio',USA,266,5896,GOOD_CLIENT
+'Nancy Davolio',Germany,249,5217.65,GOOD_CLIENT
+'Nancy Davolio',Austria,1950,53467.38,GOOD_CLIENT
+'Margaret Peacock',Argentina,48,1149.4,GOOD_CLIENT
+'Andrew Fuller',UK,27,604,GOOD_CLIENT
+'Robert King',Germany,20,420,GOOD_CLIENT
+'Nancy Davolio',UK,371,6589,BAD_CLIENT
+'Andrew Fuller',UK,165,3179.5,BAD_CLIENT
+'Nancy Davolio',Switzerland,219,6657.7,GOOD_CLIENT
+'Janet Leverling',USA,77,2283.2,GOOD_CLIENT
+'Andrew Fuller',Canada,45,335.5,BAD_CLIENT
+'Janet Leverling',Argentina,26,429.2,BAD_CLIENT
+'Nancy Davolio',Poland,59,1207.85,GOOD_CLIENT
